@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    
+    <link rel='stylesheet' href='/stylesheets/productCart.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
+  </head>
+  
+  <body>
+    <%- include('../partials/nav'); %> 
+    <%- include('../partials/searchBar'); %>
+      <div class="titulo">
+        Carrito de Compras
+      </div>
+
+      <div class="compras"> 
+        <% if(cart){ %>
+        <%  cart.forEach( prod => {  %>
+         <div class="unItem"> 
+              <div class="prodImagen">
+              <img src="/images/products/<%=prod.imageName %>" alt="una compra" width="175" height="150" class="imagen"> 
+              </div>
+            <div class="tituloYCantPrecio">
+              <div class="tituloProducto"> <%= prod.prodName %>
+              </div>
+              <div class="precioCant">
+              <input class="form-control col-xl-2  col-12"  type="number" value="<%= prod.cant %>" min="1" max="999" disabled="true">
+                <div class="col-xl-2  col-12">$ <%= (prod.price * prod.cant) %>
+                </div> 
+              </div>
+            </div>
+            </div>
+            <% })}else{ %>
+             <%  var sinCarrito = "Usted no tiene productos en su carro de compras"; %>
+             <div class="text"><%= sinCarrito %> 
+            </div>
+            <% } %>
+      </div>
+   <div class="container">       
+        <div class="row">
+          <div class="col-12">
+            <div class="pieDetalle">
+              <div class="row align-items-center">
+                <% if(cart){ %>
+                  <%  var precios = cart.map( prod => (Number(prod.price) * Number(prod.cant))); %>
+                  <%  var total = precios.reduce((a, b) => a + b, 0); %>
+                  <% }else{ %>
+                   <% var total = 0; %>
+                    <% } %>
+                <div class="col-12 col-lg-3">
+                  <h2 class="precio"> TOTAL  $ <%= total %>
+                  
+                  </h2> 
+                </div>
+
+
+                <div class="col-12 col-md-4 col-lg-4">
+                  <a href="/" class="buttonCarrito"> Seguir Comprando </a> 
+                </div>
+                <%  var caso = 'initial' %>
+                <% if(!cart){ %>
+                  <%   caso = 'noCart' %>
+                  <%   }else{ %>
+                    <%   caso = cart.length %>
+                    <% } %>
+                <div class="col-12 col-md-4 col-lg-4">
+                  <form name="compras" id="compras" action="/transactions/buy"  method="POST"  class="cabezalPagina">
+                    <input type="hidden" class="form-control" name="caso" value="<%= caso %>"> 
+                    <button type="submit" id="comprame" class="buttonComprar"  >Comprar</button>
+                   </form> 
+                </div>
+
+                <div class="col-12 col-md-1 col-lg-1">
+                  <a href="/products/delCart" >  <img src="/images/tachito.jpg" alt="borrar" width="40" height="40" >  </a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>           
+          </div> 
+
+    
+        
+          <%- include('../partials/footer'); %>
+  </body>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/bootstrap-input-spinner.js"></script>
+  <script src="/js/validateBuy.js"></script>
+<script>
+    $("input[type='number']").inputSpinner();
+</script> 
+</html>

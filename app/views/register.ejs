@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %> 
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
+  </head>
+  <body>
+    
+    <%- include('../partials/nav'); %> 
+   
+      <form action="/users/login" method="POST">
+    <div class="row">
+      <div class="col-12">
+      <div class="tituloSaludo">
+      <h2> <%= msg %></h2>
+      <br>
+    </div>
+    </div>
+    <div class="col-12">
+      <div class = "elImput">
+      <input class="unInput" type="text" name="email" size="40" placeholder="Correo Electronico" required>
+      <input class="unInput" type="password" name="contrasena" size="40" placeholder="Contraseña" required>
+      
+    </div>
+      <label>
+        <input class="unInput" type="checkbox" name="recordar" size="40" >
+        Mantener sesión iniciada
+      </label>
+    
+    </div>
+    <div class="col-12">
+        
+              <div class="crearCta"> 
+                <button class="ingreso" type="submit" > Ingresá </button>
+                 </div> 
+       
+      </div>
+    </div>
+      </form>
+    <div class="row">
+      <div class="col-12">
+        <div class="crearCta">
+           <p>¿No tenes una cuenta?</p>
+    </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        
+    <a class="crearCta" href="/users/Create">
+      <input class="registrate" type="submit" value="Registrate">
+      </a>
+      </div>
+    
+    </div>
+    <%- include('../partials/footer'); %>
+    <script src="/js/multi-step-conf.js"></script>
+  </body>
+</html>

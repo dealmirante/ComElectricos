@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+ font-family: 'Montserrat', sans-serif;
+}
+
+/*Header*/
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* eliminar el bullet de la lista */
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.container-header {
+  max-width: 1140px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.main-header {
+  background-color: transparent;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+
+.logo,
+.left-navbar, 
+.right-navbar li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left-navbar {
+  margin-left: 2px;
+}
+
+.right-navbar {
+  float: right;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.left-navbar p,
+.right-navbar a {  
+  color: #597ff9;
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+
+.right-navbar a:hover {
+  color: #000000;
+}
+
+/*Para cambiar el tamaño del buscador*/
+.wrap{
+  width: 100%;
+  height: 35px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 90%;
+  border: 1px solid #597ff9;
+  border-right: none;
+  padding: 5px;
+  height: auto;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  text-align: center;
+}
+
+.searchTerm:focus{
+  color: #597ff9;
+}
+
+.searchButton {
+  width: 5%;
+  height: auto;
+  border: 1px solid #597ff9;
+  background: white;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Breadcrum*/
+.breadcrum li{
+    display:inline-block;
+    padding:25px 0px 15px;
+    font-size: 12px;
+  }
+
+.breadcrum li a{
+   color: #000;
+   font-size: 12px;
+  }
+
+.breadcrum li:first-child a{
+    color: #007bff;
+  }
+
+/*Título producto*/
+ .tituloProducto {
+   font-weight: bold;
+   font-size:  18px;
+ }
+
+ .tituloDetalle{
+  font-weight: bold;
+  font-size:  14px;
+ }
+
+
+ /*Estrellas*/
+ .checked {
+  color: orange;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+.caracteristicasProductos li {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.textoDescripcion {
+  font-size: 13px;
+}
+
+/*Pie de Detalle Compra*/
+.pieDetalle {
+  border:solid 1px lightslategrey;
+  padding-top: 20px;
+  margin-top: 60px;
+  display: flex;
+  justify-content:space-around;
+  padding-bottom: 10px;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.buttonComprar {
+  background-color: #597ff9;
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+}
+.buttonCarrito {
+  background-color: white ;
+  border: none;
+  color: #597ff9;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: solid 1px #597ff9 ;
+  border-radius: 5%;
+}
+
+/*Pie*/
+.footer-navbar {
+  width: 100%;
+  font-size: 10px;
+  padding-top: 20px;
+  text-transform: capitalize;
+  clear: both;
+  }
+
+.footer-navbar li {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.footer-navbar a {
+  color:#597ff9;
+}
+
+div label {
+  width: 100%;
+  font-weight: bold;
+}
+div input {
+  width: 100%;
+}
+

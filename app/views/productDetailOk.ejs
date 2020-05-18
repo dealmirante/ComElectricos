@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  </head>
+
+  <body>
+    <%- include('../partials/nav'); %> 
+    <%- include('../partials/searchBar'); %>
+ <!---breadrcum-->
+
+  <ul class="breadcrum"> 
+    <li><a href="/"><%= product.categories.categoryName  %></a></li> 
+    <li> Detalle de producto </li> 
+  </ul>
+
+<!---titulo producto-->
+
+<div class="container">
+  <form action="/products/addToCart"  method="POST" class="cabezalPagina">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-8"> 
+      <p class="tituloProducto"> <%= product.prodName %></p>
+    </div>
+    <div class="col-6 col-lg-4"> 
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <a href="#" target="blank">Ver Opiniones </a>
+     <% if(user.id == product.idSeller && logged){ %>
+        <a href="/products/<%= product.id %>/edit" >Editar mi Producto </a>
+        <%   } %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-6 col-lg-4"> 
+      <img src="/images/products/<%= product.imageName %>" alt="Product" width="150" height="150">
+    </div>
+    <div class="col-12 col-sm-6 col-lg-8"> 
+      <p class="tituloDetalle"> Características del Producto </p>
+      <p class="tituloDetalle"> Voltaje: <%= product.voltage %></p>
+      <p class="tituloDetalle"> Modelo: <%= product.model %></p>
+      <p class="textoDescripcion"> <%= product.description%></p>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="text"><%= msg %></div>
+      <div class="pieDetalle">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-3">
+            <h2 class="precio"> $ <%= product.price %> </h2> 
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3">
+            <input class="form-control" name="cant" id="cantCarrito" type="number" value="2" min="1" max="999">
+          </div> 
+
+          
+          <div class="col-12 col-md-4 col-lg-3">
+             
+            <input type="hidden" class="form-control" name="prodName" value="<%= product.prodName %>"> 
+            <input type="hidden" class="form-control" name="id" value="<%= product.id %>">
+            <input type="hidden" class="form-control" name="price" value="<%= product.price %>">
+            <input type="hidden" class="form-control" name="imageName"  value="<%= product.imageName %>">
+            <button type="submit" class="buttonCarrito"  >Agregar al Carrito</button>
+           </form> 
+        </div>
+
+          <div class="col-12 col-md-4 col-lg-3">
+            <form action="/products/buy1Prod"  method="POST" class="cabezalPagina">
+            <input type="hidden" class="form-control" name="prodName" value="<%= product.prodName %>"> 
+            <input type="hidden" class="form-control" name="id" value="<%= product.id %>">
+            <input type="hidden" class="form-control" name="price" value="<%= product.price %>">
+            <input type="hidden" class="form-control" name="imageName" value="<%= product.imageName %>">
+            <input class="form-control" name="cant" id="cantCompra" type="hidden" value="2" min="1" max="999">
+            <button type="submit" class="buttonComprar"  >  Comprar  </a>
+          </form>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- pie -->
+
+
+<%- include('../partials/footer'); %>
+    
+
+<script src="/js/localStorage.js">
+
+</script>
+<!---bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+</body>
+</html>

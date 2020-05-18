@@ -1,0 +1,54 @@
+<div class="container">
+    <!-- main-header -->
+    <header class="row">
+      <!-- logo -->
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12">
+        <a href="/">
+          <img src="/images/logo.png" alt="Logo SLC">
+        </a>
+      </div>
+      <!-- Left-navbar -->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+      <nav class="left-navbar">
+       <p> Componentes Electrónicos</p>
+       
+      </nav>
+    </div>
+      <!-- right-navbar -->
+      <div class="col-xl-7 col-lg-7 col-md-4 col-sm-6 col-12" >
+      <nav class="right-navbar">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <% if (!logged){ %>
+            <li><a href="/users/register" >Ingresá</a></li>
+            <li><a href="/users/create" >Registrate</a></li>
+            <% }else{ %>
+            <li><a href="/users/dashboard" >Mis Compras/Ventas</a></li>
+            <% } %>
+
+            <% if(logged){ %>
+            <li><a href="/productCart" > <img src="/images/carrito16px.png"> 
+            
+                ( <%=   cart.length  %> )   
+               
+            
+            </a></li>
+            <% }else{ %>
+              <li><a href="/productCart" > <img src="/images/carrito16px.png"></a></li>
+              <% } %>
+            <% if(logged){ %>
+              <li><a href="/users/userProfile/<%= user.id %>" > <img src="/images/users/<%= user.avatarName %>" alt="avatar" with="25px" height="25px"></a></li>
+              <li><a href="/users/logOut" >Salir</a></li>
+           
+            <% } %>
+        </ul>
+        
+        
+        
+      </nav>
+    </div>
+    </header>
+
+
+<!-- destacados -->
+ <!-- <h1 class="destacados"> Destacados</h1>  -->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/registerforma.css'/>
+  </head>
+  <body>
+    <%- include('../partials/nav'); %> 
+    
+    
+    <h1>Crear Cuenta</h1>
+
+    <h3>Sobre Vos</h3>
+    <form>
+     <div> 
+      <input type="text" name="nombreusuario" value="Nombre">
+      <input type="text" name="apellido" value="Apellido">
+     </div>
+     <div>
+     <input type="id" name="DNI" value="Tipo y Numero de Documento">
+      <select name="gender" value="Sexo">
+        <option value="0">Seleccione su genero</option>
+        <option value="1">H</option>
+        <option value="2">F</option>
+      </select>
+     </form>
+     
+    <div>
+    <h3>Para ingresar a tu cuenta</h3>
+    <form>
+
+      <input type="email" name="mail" value="Correo electrónico">
+      <input type="text" name="contraseña" value="Contraseña">
+    </form>
+    </div>
+    <div>
+    <h3>Datos de contacto</h3>
+     <form>
+
+      <input type="tel" name="telefono" value="Telefono 1">
+      <input type="tel" name="telefono" value="Telefono 2">
+     </form>
+     </div>
+     <a href=/registerformB type="checkbox">Siguiente</a>
+     <%- include('../partials/footer'); %>
+  </body>
+</html>

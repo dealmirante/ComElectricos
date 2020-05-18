@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Montserrat', sans-serif;
+   padding: 1%;
+  }
+ 
+  .elLogo{
+    width:100%;
+  }
+
+  /*Header*/
+  ul,
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* eliminar el bullet de la lista */
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .container-header {
+    max-width: 1140px;
+    margin: auto;
+    overflow: hidden;
+    width:70%
+  }
+  
+  .main-header {
+    background-color: transparent;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .logo,
+  .left-navbar, 
+  .right-navbar li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .left-navbar {
+    margin-left: 2px;
+  }
+  
+  .right-navbar {
+    float: right;
+    margin-top: 20px;
+    font-size: 12px;
+    margin-right: 10%;
+  }
+  
+  .left-navbar p,
+  .right-navbar a {  
+    color: #597ff9;
+    text-transform: capitalize;
+    margin-right: 10px;
+  }
+  
+  .right-navbar a:hover {
+    color: #000000;
+  }
+
+.titulo{
+    align-self: flex-start;
+    font-size: 140%;
+    font-family: 'Montserrat', sans-serif;
+    color: #5A5756;
+    margin: 1%;
+}
+
+.compras{
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.unItem{
+    display: flex;
+    margin-bottom: 4%;
+}
+
+.imagen{
+    border: 1px;
+    width: 100%;
+}
+
+.tituloYCantPrecio{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 5%; 
+  width: 90%;
+}
+
+.tituloProducto{
+    align-self: flex-start;
+    color: #5A5756;
+    
+}
+
+.precioCant{
+    display: flex;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.resumen{
+    display:flex;
+    padding: 1%;
+    width: 100%;
+}
+
+
+.seguiComprando{
+    align-self: flex-end;
+    font-size: 90%;
+}
+
+.resaltarTexto{
+    display: flex;
+    font-size: larger;
+    color:#000000;
+    align-self: center;
+    justify-self: flex-end;
+    margin-left: 20%;
+    margin-right: 1%;
+}
+
+.superResaltarTexto{
+    display: flex;
+    font-size: 200%;
+    color: #000000;
+    font-weight: bolder;
+    justify-self: flex-end;
+    margin-right: 3%;
+}
+
+.botonComprar{
+  background-color: #597ff9;
+  height: 2%;
+  width:5%
+}
+
+.buttonComprar {
+  justify-self: center;
+  align-self: center;
+  text-align: left;
+  background-color: #597ff9;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16%;
+  border-radius: 5%;
+  height: 8%;
+  
+}
+
+
+
+.wrap{
+  width: 100%;
+  height: 35px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 90%;
+  border: 1px solid #597ff9;
+  border-right: none;
+  padding: 5px;
+  height: auto;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  text-align: center;
+}
+
+.footer-navbar {
+  width: 100%;
+  font-size: 10px;
+  
+  text-transform: capitalize;
+  clear: both;
+  }
+
+.footer-navbar li {
+  display: inline-block;
+  order: 100;
+  vertical-align: middle;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.footer-navbar a {
+  color:#597ff9;
+}
